@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho Mega: Amor, Terra e Tecnologia 🎀</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CANVAS PARA ANIMAÇÃO DE PÉTALAS -->
+    <canvas id="petalCanvas"></canvas>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="backToTop" title="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- DECORAÇÕES FIXAS -->
+    <div class="fixed-decoration bow-left"><i class="fa-solid fa-ribbon"></i></div>
+    <div class="fixed-decoration bow-right"><i class="fa-solid fa-ribbon"></i></div>
+
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fa-solid fa-seedling"></i> Agrinho <span style="font-size:0.8em; color: var(--cor-rosa-escuro);">Premium</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#agroforte">Agroforte</a></li>
+                    <li><a href="#mst">MST</a></li>
+                    <li><a href="#sustentavel">Sustentável</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION COM TEXTO ANIMADO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="typing-text">Cultivando o Futuro <br> com Amor e Tecnologia 🌸</h1>
+            <p>Descubra como o campo pode ser forte, justo e super fofo.</p>
+            <div class="hero-stats">
+                <span><i class="fa-solid fa-earth-americas"></i> Global</span>
+                <span><i class="fa-solid fa-users"></i> Social</span>
+                <span><i class="fa-solid fa-leaf"></i> Ecológico</span>
+            </div>
+            <button class="btn-coquette" onclick="scrollToSection('agroforte')">Iniciar Jornada <i class="fa-solid fa-heart"></i></button>
+        </div>
+    </section>
+
+    <!-- SEÇÃO AGROFORTE: TECNOLOGIA E FORÇA -->
+    <section id="agroforte" class="theme-section">
+        <h2 class="section-title">Agroforte: A Força da Tecnologia</h2>
+        
+        <p class="intro-text fade-in-up">
+            O Agroforte não é só sobre plantar, é sobre <strong>plantar inteligente</strong>. Usamos a ciência para tirar o melhor da terra sem cansar tanto o agricultor.
+        </p>
+
+        <!-- Estatísticas Animadas -->
+        <div class="stats-container fade-in-up">
+            <div class="stat-box">
+                <span class="stat-number" data-target="80">0</span>%
+                <p>Mais Produtividade</p>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number" data-target="50">0</span>%
+                <p>Menos Perda</p>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number" data-target="1000">0</span>+
+                <p>Familias Apoiadas</p>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- Accordion (Sanfona) para muito conteúdo -->
+        <div class="accordion-container fade-in-up">
+            <h3><i class="fa-solid fa-microchip"></i> Conheça as Tecnologias:</h3>
+            
+            <details class="accordion-item">
+                <summary>Agricultura de Precisão com Drones 🚁</summary>
+                <div class="accordion-content">
+                    <p>Imagine um robô voador que olha para a plantação e diz: "Ei, esta plantinha aqui está com sede!" Os drones fazem isso! Eles mapeiam o campo, mostram onde tem praga e onde precisa de água. Isso economiza veneno e água, deixando a natureza mais feliz.</p>
+                </div>
+            </details>
+
+            <details class="accordion-item">
+                <summary>Sistema de Plantio Direto 🌱</summary>
+                <div class="accordion-content">
+                    <p>Antigamente, o agricultor revolvia toda a terra antes de plantar. Isso cansava o solo. O Plantio Direto é como colocar uma semente numa cama feita, sem mexer muito. A palha da colheita anterior fica em cima, protegendo a terra do sol e da chuva forte. É como um protetor solar para o solo!</p>
+                </div>
+            </details>
+
+            <details class="accordion-item">
+                <summary>Irrigação Inteligente 💧</summary>
+                <div class="accordion-content">
+                    <p>Sistemas que ligam e desligam a água sozinhos! Sensores no solo medem a umidade e só soltam água quando a planta está precisando de verdade. Nada de desperdício!</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- SEÇÃO MST: ABAS INTERATIVAS -->
+    <section id="mst" class="theme-section bg-alt">
+        <h2 class="section-title">MST: Luta, Vida e Produção</h2>
+        
+        <div class="mst-container fade-in-up">
+            <!-- Menu das Abas -->
+            <div class="tabs-header">
+                <button class="tab-btn active" onclick="openTab(event, 'luta')">A Luta pela Terra</button>
+                <button class="tab-btn" onclick="openTab(event, 'producao')">Agroecologia</button>
+                <button class="tab-btn" onclick="openTab(event, 'edu')">Educação no Campo</button>
+            </div>
+
+            <!-- Conteúdo das Abas -->
+            <div id="luta" class="tab-content active">
+                <div class="tab-inner">
+                    <h3>Por que a Reforma Agrária é importante?</h3>
+                    <p>O Brasil é gigante, mas pouca gente possui a terra. O MST (Movimento dos Trabalhadores Rurais Sem Terra) luta para que quem trabalha na terra tenha o direito de morar nela e produzir.</p>
+                    <div class="highlight-box">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <p><strong>Justiça:</strong> Terra para quem nela trabalha diminui a fome e a desigualdade.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="producao" class="tab-content">
+                <div class="tab-inner">
+                    <h3>Produzindo sem Veneno (Agroecologia)</h3>
+                    <p>Nos assentamentos, o MST é pioneiro na agroecologia. Eles não usam agrotóxicos que fazem mal à saúde. Usam defensivos naturais, feitos de plantas, e respeitam o tempo da natureza.</p>
+                    <p>O resultado? Alimentos mais saudáveis, cheios de sabor e que protegem as abelhas e os pássaros!</p>
+                    <div class="img-gallery-mini">
+                        <img src="https://picsum.photos/seed/horta1/150/100" alt="Horta">
+                        <img src="https://picsum.photos/seed/horta2/150/100" alt="Legumes">
+                    </div>
+                </div>
+            </div>
+
+            <div id="edu" class="tab-content">
+                <div class="tab-inner">
+                    <h3>Escolas Itinerantes e do Campo</h3>
+                    <p>Educação é um direito de todos! O MST construiu centenas de escolas em assentamentos. O currículo é especial: as crianças aprendem matemática calculando a produção da roça e biologia estudando o solo local.</p>
+                    <p><em>"Educação do Campo é educação para a vida!"</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SUSTENTÁVEL: CHECKLIST INTERATIVO -->
+    <section id="sustentavel" class="theme-section">
+        <h2 class="section-title">Futuro Sustentável</h2>
+        
+        <div class="sustentavel-wrapper">
+            <div class="sust-text fade-in-up">
+                <h3>Seu Eco-Poder</h3>
+                <p>Pequenas ações fazem uma grande diferença. Marque o que você já faz hoje e veja seu impacto!</p>
+                
+                <div class="checklist-container">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="sust-check">
+                        <span>Eu separo o lixo (reciclagem)</span>
+                    </label>
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="sust-check">
+                        <span>Eu desligo a luz ao sair do quarto</span>
+                    </label>
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="sust-check">
+                        <span>Eu fecho a torneira escovando os dentes</span>
+                    </label>
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="sust-check">
+                        <span>Evito plástico descartável</span>
+                    </label>
+                </div>
+
+                <div class="score-box">
+                    Seu nível de Sustentabilidade: <span id="scoreVal">0</span>%
+                    <div class="progress-bar-bg">
+                        <div id="progressBar" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sust-cards fade-in-up">
+                <div class="eco-card tilt-effect">
+                    <i class="fa-solid fa-solar-panel"></i>
+                    <h4>Energia Renovável</h4>
+                    <p>O sol e o vento são infinitos. Usá-los evita poluir o ar.</p>
+                </div>
+                <div class="eco-card tilt-effect">
+                    <i class="fa-solid fa-shirt"></i>
+                    <h4>Consumo Consciente</h4>
+                    <p>Comprar apenas o necessário e reaproveitar roupas.</p>
+                </div>
+                <div class="eco-card tilt-effect">
+                    <i class="fa-solid fa-carrot"></i>
+                    <h4>Comida de Verdade</h4>
+                    <p>Comprar de produtores locais incentiva a economia próxima.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUIZ AVANÇADO -->
+    <section id="quiz" class="theme-section">
+        <div class="quiz-box fade-in-up">
+            <h2><i class="fa-solid fa-puzzle-piece"></i> Desafio Final</h2>
+            <div id="quiz-ui">
+                <div class="quiz-progress">Pergunta <span id="q-current">1</span> de <span id="q-total">3</span></div>
+                <p id="question-text" class="fade-in">...</p>
+                <div id="options-container" class="fade-in"></div>
+                <p id="feedback-msg" class="feedback"></p>
+            </div>
+            <div id="quiz-result" style="display: none;">
+                <i class="fa-solid fa-trophy" style="font-size: 4rem; color: gold;"></i>
+                <h3>Parabéns!</h3>
+                <p>Você acertou <span id="final-score">0</span> de 3 questões!</p>
+                <button class="btn-coquette" onclick="restartQuiz()">Jogar Novamente</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>Projeto Agrinho - Cultivando Conhecimento 🌸</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
